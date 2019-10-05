@@ -1,0 +1,57 @@
+<div class="container">
+    <p>Alta de escuela</p>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="">CUIT Escuela</label>
+                <input type="text" [(ngModel)]="school.idSchool" name="idSchool" class="form-control" id="" placeholder="20123456781">
+            </div>
+            <div class="form-group col-5">
+                <label for="">Nombre</label>
+                <input type="text" [(ngModel)]="school.name" name="name" class="form-control" id="">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="">Domicilio</label>
+                <input type="text" [(ngModel)]="school.address" name="address" class="form-control" id="">
+            </div>
+            <div class="form-group col-3">
+                <label for="">Localidad</label>
+                <input type="text" [(ngModel)]="school.locality" name="locality" class="form-control" id="">
+            </div>
+            <div class="form-group col-3">
+                <label for="">Provincia</label>
+                <input type="text" [(ngModel)]="school.province" name="province" class="form-control" id="">
+            </div>
+        </div>
+        <button type="button" (click)="save()" class="btn btn-outline-primary">Guardar</button>
+
+
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="">Subir Imagen</label>
+                <input type="file" (change)="uploadFile($event)" class="form-control">
+            </div>
+            <div class="form-group col-6">
+                <label for="">Subir Escudo</label>
+                <input type="file" (change)="uploadShield($event)" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="">Imagen</label>
+                    <img *ngIf="school.urlImage" [src]="school.urlImage" width="100"  alt="">
+                </div>
+                <div class="form-group col-6">
+                    <label for="">Eschudo Escudo</label>
+                    <img *ngIf="school.urlShield" [src]="school.urlShield" width="100" alt="">
+                </div>
+            </div>
+
+
+    </form>
+    
+</div>
