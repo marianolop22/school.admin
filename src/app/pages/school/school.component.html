@@ -26,17 +26,19 @@
                 <input type="text" [(ngModel)]="school.province" name="province" class="form-control" id="">
             </div>
         </div>
-        <button type="button" (click)="save()" class="btn btn-outline-primary">Guardar</button>
+        <button type="button" (click)="save()" class="btn btn-outline-primary mr-3">Guardar</button>
+        <button type="button" (click)="load()" class="btn btn-outline-primary mr-3">Cargar</button>
+        <button type="button" (click)="update()" class="btn btn-outline-primary mr-3">Actualizar</button>
 
 
         <div class="form-row">
             <div class="form-group col-6">
                 <label for="">Subir Imagen</label>
-                <input type="file" (change)="uploadFile($event)" class="form-control">
+                <input type="file" (change)="uploadFile($event, 'urlImage', 'front')" class="form-control">
             </div>
             <div class="form-group col-6">
                 <label for="">Subir Escudo</label>
-                <input type="file" (change)="uploadShield($event)" class="form-control">
+                <input type="file" (change)="uploadFile($event, 'urlShield', 'shield')" class="form-control">
             </div>
         </div>
 
@@ -50,6 +52,9 @@
                     <img *ngIf="school.urlShield" [src]="school.urlShield" width="100" alt="">
                 </div>
             </div>
+
+        <button type="button" (click)="delete()" class="btn btn-outline-primary">Borrar 1</button>
+        <button type="button" (click)="delete()" class="btn btn-outline-primary">Borrar 2</button>
 
 
     </form>

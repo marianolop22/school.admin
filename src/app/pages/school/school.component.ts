@@ -32,64 +32,78 @@ export class SchoolComponent implements OnInit {
     )
   }
 
-  async uploadFile(event) {
+  update () {
+    this.school.idUser = 123456;
 
-    // this._school.uploadFile ( event.target.files[0], this.school.idSchool, 'front' )
-    //   .then (
-    //     response => {
-    //       this.school.urlImage = response;
-    //       this._school.updateMainImage ( this.school ).subscribe (
-    //         response => {
-    //           console.log ( 'urlimage ', response)
-    //         }
-    //       )
-    //     }
-    //   );
+    this._school.update ( this.school ).subscribe (
+      response => {
+        console.log ( response );
+      },
+      err => {
+        console.log ( err.error.message.sqlMessage );
+      }
+    )
+  }
 
-    this._school.uploadFile2 ( event.target.files[0], this.school.idSchool, 'front' )
+  load () {
+
+    this._school.getSchool( this.school.idSchool )
+      .subscribe (
+        response => {
+          console.log ( response );
+          this.school = response.school;
+        }
+      )
+  }
+
+
+
+
+  async uploadFile(event, field, type) {
+
+    this._school.uploadFile ( event.target.files[0], this.school.idSchool, type )
       .pipe (
         finalize(() => { 
           this._school.fileRef.getDownloadURL().subscribe(
             response => {
-              console.log ( 'url de respuesta',response );
-              this.school.urlImage = response;
-              this._school.updateMainImage ( this.school ).subscribe (
+              if ( this.school[field]) {
+
+                let response = this._school.deleteFile (this.school[field] );
+                console.log ( 'borrado ', response);                
+              }
+
+              this.school[field] = response;
+              this._school.updateImage ( this.school ).subscribe (
                 response => {
-                  console.log ( 'urlimage ', response)
+                  console.log ( 'update ')
                 }
               )
             }
           )
         })
       ).subscribe ( response => {
-        console.log ( 'respuesta', response );
+        //console.log ( 'respuesta', response );
+        let status = Math.round( (response.bytesTransferred / response.totalBytes) * 100 );
+        console.log (`avance ${status}%` )
       })
-
-
-
-
 
   }
 
 
-  uploadShield(event) {
+  delete () {
 
-    this._school.uploadFile ( event.target.files[0], this.school.idSchool, 'shield' )
+    console.log ( 'hola',this.school.urlShield);
+    this._school.deleteFile (this.school.urlShield )
       .then (
         response => {
-          this.school.urlShield = response;
-          this._school.updateShieldImage ( this.school ).subscribe (
-            response => {
-              console.log ( 'shieldimage ', response)
-            }
-          )
+          console.log ('borrado', response);
         }
-      );
-    // this._school.uploadPercent.subscribe (
-    //   response => {
-    //     console.log ( response );
-    //   }
-    // )
+      )
+      .catch (
+        err => {
+          console.log ( 'error', err);
+        }
+      )
   }
 
 }
