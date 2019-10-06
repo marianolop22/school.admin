@@ -46,7 +46,6 @@ export class SchoolService {
 
 
   public uploadFile ( fileUpload: File, idSchool:number, type: string ): Observable<any> {
-
     const ext = fileUpload.name.split ('.')[ fileUpload.name.split ('.').length - 1];
     const filePath = `schools/${idSchool}_${type}_${Date.now()}.${ext}`;
     this.fileRef = this.storage.ref(filePath);
