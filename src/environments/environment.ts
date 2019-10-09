@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://localhost:8080/api/v1',
-  //urlApi: 'http://api.micolegio.com.ar:8080/api/v1',
+  urlApi: 'http://localhost:3301/v1',
+  //urlApi: 'https://api.micolegio.com.ar/v1',
   firebaseConfig: {
 
     apiKey: 'AIzaSyBXRCGCHOakcd6KXx99FswMGw0g9yH4BQs',

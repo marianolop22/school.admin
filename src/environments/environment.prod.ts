@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  urlApi: 'http://api.micolegio.com.ar:8080/api/v1',
+  urlApi: 'https://api.micolegio.com.ar/v1',
   firebaseConfig: {
 
     apiKey: 'AIzaSyBXRCGCHOakcd6KXx99FswMGw0g9yH4BQs',
