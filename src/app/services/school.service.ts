@@ -21,10 +21,10 @@ export class SchoolService {
   ) { }
 
   public save( school:School ):Observable<any> {
-    return this.http.post ( `${environment.urlApi}/school/add`, school, {observe:'body'}  );
+    return this.http.post ( `${environment.urlApi}/school`, school, {observe:'body'}  );
   }
   public update( school:School ):Observable<any> {
-    return this.http.put ( `${environment.urlApi}/school/updateSchool`, school, {observe:'body'}  );
+    return this.http.put ( `${environment.urlApi}/school`, school, {observe:'body'}  );
   }
 
   // public async uploadFile ( fileUpload: File, idSchool:number, type: string ): Promise<any> {
@@ -54,7 +54,7 @@ export class SchoolService {
 
   public getSchool ( idSchool:number ): Observable<any> {
     let params = new HttpParams().set("idSchool",idSchool.toString());
-    return this.http.get ( `${environment.urlApi}/school/getSchool`, {observe:'body', params: params}  );
+    return this.http.get ( `${environment.urlApi}/school`, {observe:'body', params: params}  );
   }
 
   public async deleteFile ( filePath:string ) {

@@ -20,7 +20,6 @@ export class SchoolComponent implements OnInit {
   }
 
   save () {
-    this.school.idUser = 123456;
 
     this._school.save ( this.school ).subscribe (
       response => {
@@ -33,7 +32,6 @@ export class SchoolComponent implements OnInit {
   }
 
   update () {
-    this.school.idUser = 123456;
 
     this._school.update ( this.school ).subscribe (
       response => {
@@ -52,12 +50,12 @@ export class SchoolComponent implements OnInit {
         response => {
           console.log ( response );
           this.school = response.school;
+        },
+        err => {
+          console.log ( err.error.message );
         }
       )
   }
-
-
-
 
   async uploadFile(event, field, type) {
 
