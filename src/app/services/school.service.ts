@@ -45,14 +45,14 @@ export class SchoolService {
 
 
 
-  public uploadFile ( fileUpload: File, idSchool:number, type: string ): Observable<any> {
+  public uploadFile ( fileUpload: File, idSchool:string, type: string ): Observable<any> {
     const ext = fileUpload.name.split ('.')[ fileUpload.name.split ('.').length - 1];
-    const filePath = `schools/${idSchool}_${type}_${Date.now()}.${ext}`;
+    const filePath = `schools/${idSchool}/${idSchool}_${type}_${Date.now()}.${ext}`;
     this.fileRef = this.storage.ref(filePath);
     return this.storage.upload(filePath, fileUpload).snapshotChanges();
   }
 
-  public getSchool ( idSchool:number ): Observable<any> {
+  public getSchool ( idSchool:string ): Observable<any> {
     let params = new HttpParams().set("idSchool",idSchool.toString());
     return this.http.get ( `${environment.urlApi}/school`, {observe:'body', params: params}  );
   }

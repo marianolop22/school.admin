@@ -49,7 +49,7 @@ export class SchoolComponent implements OnInit {
       .subscribe (
         response => {
           console.log ( response );
-          this.school = response.school;
+          this.school = response.message;
         },
         err => {
           console.log ( err.error.message );
@@ -69,7 +69,6 @@ export class SchoolComponent implements OnInit {
                 let response = this._school.deleteFile (this.school[field] );
                 console.log ( 'borrado ', response);                
               }
-
               this.school[field] = response;
               this._school.updateImage ( this.school ).subscribe (
                 response => {
