@@ -1,0 +1,29 @@
+<div class="container">
+    <p>Alta de escuela</p>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="">CUIT Escuela</label>
+                <input type="text" [(ngModel)]="groupTemplate.idSchool" name="idSchool" class="form-control" id="" placeholder="20123456781">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="">Id</label>
+                <input type="text" [(ngModel)]="groupTemplate.idGroup" name="address" class="form-control" id="">
+            </div>
+            <div class="form-group col-3">
+                <label for="">Descripcion</label>
+                <input type="text" [(ngModel)]="groupTemplate.description" name="locality" class="form-control" id="">
+            </div>
+        </div>
+        <button type="button" (click)="save()" class="btn btn-outline-primary mr-3">Guardar</button>
+        <button type="button" (click)="load()" class="btn btn-outline-primary mr-3">Cargar</button>
+        <button type="button" (click)="update()" class="btn btn-outline-primary mr-3">Actualizar</button>
+        <button type="button" (click)="getList()" class="btn btn-outline-primary mr-3">Listado</button>
+
+    </form>
+    
+</div>
+

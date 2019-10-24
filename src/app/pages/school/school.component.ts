@@ -45,7 +45,7 @@ export class SchoolComponent implements OnInit {
 
   load () {
 
-    this._school.getSchool( this.school.idSchool )
+    this._school.get( this.school.idSchool )
       .subscribe (
         response => {
           console.log ( response );

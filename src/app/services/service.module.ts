@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  SchoolService
+  SchoolService,
+  GroupTemplateService
 } from "./service.index";
 import { HttpClientModule } from "@angular/common/http";
 //import { AdminGuard } from './admin.guard';
@@ -13,7 +14,8 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule
   ],
   providers: [
-    SchoolService //servicio para el manejo de la info de escuela
+    SchoolService, //servicio para el manejo de la info de escuela
+    GroupTemplateService //para el manejo de los groupTemplate
   ]
 })
 export class ServiceModule { }

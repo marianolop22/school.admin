@@ -52,7 +52,7 @@ export class SchoolService {
     return this.storage.upload(filePath, fileUpload).snapshotChanges();
   }
 
-  public getSchool ( idSchool:string ): Observable<any> {
+  public get ( idSchool:string ): Observable<any> {
     let params = new HttpParams().set("idSchool",idSchool.toString());
     return this.http.get ( `${environment.urlApi}/school`, {observe:'body', params: params}  );
   }

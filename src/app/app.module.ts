@@ -10,6 +10,7 @@ import { ServiceModule } from './services/service.module';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
+import { GroupTemplateComponent } from './pages/group-template/group-template.component';
 
 
 
@@ -17,7 +18,8 @@ import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
-    SchoolComponent
+    SchoolComponent,
+    GroupTemplateComponent
   ],
   imports: [
     BrowserModule,

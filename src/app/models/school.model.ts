@@ -1,22 +1,19 @@
-import { runInThisContext } from 'vm';
+import { Base } from "./base.model";
 
-export class School {
+
+export class School extends Base {
 
     public idSchool: string;
     public name :string;
     public address :string;
     public locality :string;
     public province :string;
-    public creationDate :Date;
-    public modifiedDate: Date;
-    public endDate :Date
-    public idUser: string;
     public urlImage: string;
     public urlShield: string;
 
 
     constructor() {
-        this.endDate = null;
+        super();
         
     }
 }
