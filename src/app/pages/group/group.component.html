@@ -1,0 +1,36 @@
+<div class="container">
+    <p>Alta de escuela</p>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="">CUIT Escuela</label>
+                <input type="text" [(ngModel)]="group.idSchool" name="idSchool" class="form-control" id="" placeholder="20123456781">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="">Id</label>
+                <input type="text" [(ngModel)]="group.idGroup" name="address" class="form-control" id="">
+            </div>
+            <div class="form-group col-3">
+                <label for="">Año</label>
+                <select class="form-control" class="form-control" name="year" id="" [(ngModel)]="group.year">
+                    <option *ngFor="let year of yearList">{{year}}</option>
+                </select>
+                <!-- <input type="text" [(ngModel)]="group.year" name="year" class="form-control" id=""> -->
+            </div>
+            <div class="form-group col-3">
+                <label for="">Baja</label>
+                <input type="text" [(ngModel)]="group.endDate" name="endDate" class="form-control" id="">
+            </div>
+        </div>
+        <button type="button" (click)="save()" class="btn btn-outline-primary mr-3">Guardar</button>
+        <button type="button" (click)="load()" class="btn btn-outline-primary mr-3">Cargar</button>
+        <button type="button" (click)="update()" class="btn btn-outline-primary mr-3">Actualizar</button>
+        <button type="button" (click)="getList()" class="btn btn-outline-primary mr-3">Listado</button>
+
+    </form>
+    
+</div>
+

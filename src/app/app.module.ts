@@ -11,6 +11,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { GroupTemplateComponent } from './pages/group-template/group-template.component';
+import { GroupComponent } from './pages/group/group.component';
 
 
 
@@ -19,7 +20,8 @@ import { GroupTemplateComponent } from './pages/group-template/group-template.co
   declarations: [
     AppComponent,
     SchoolComponent,
-    GroupTemplateComponent
+    GroupTemplateComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
